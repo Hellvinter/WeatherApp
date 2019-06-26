@@ -1,22 +1,30 @@
-import React, { useState } from "react";
+import React, {useState, useEffect} from "react";
+import axios from "axios"
 
-const DailyTemp = () => {
-  //Create State and Set it
-  const [ships, setShips] = useState([{ starship: {} }]);
-  console.log(ships);
-  //Function will fetch data (with custom Hook called)
-  const addShips = () => {};
+function DailyTemp() {
+  //initialise state
+  const person = {character : []}
+  const initUrl = "http https://swapi.co/api/people/1"
+  const[data, setData] = useState(person)
+  console.log(data)
+  console.log(data.character.name)
 
-  //Function wich recieve and display all data
-  const DeathStar = starship => {
-    return (
-      <div>
-        <h2>Name:{starship.name}</h2>
-        <h3>Model:{starship.model}</h3>
-        <p>Build on:{starship.manufacturer}</p>
-      </div>
-    );
-  };
+  useEffect(() => {
+    const Fetch = async() => {
+      const result = await axios(initUrl)
+      setData(result.data)
+    }
+    Fetch()
+  },[]) 
+
+  return (
+    <div>
+      <h1>Hi</h1>
+      {data.character.map(item => (
+        <h2>{item.name}</h2>
+      ))}
+    </div>
+  )
 };
 
 export default DailyTemp;
@@ -24,22 +32,38 @@ export default DailyTemp;
 // This component will recieve data from source API
 // then it display all we want on the screen
 
-// 1.I need to set state with Hook
-// 2. I need to create const wich will take param and
-// then pass data from state to their JSX childs with this param
-// 3. I need create const which will setState
-// in this const I need to use custom Hook which will fetch data
-// from a source API
-// 4. After that I need to import all my code to App function
-// 5. then I need call DailyTemp component in return of App
-// other comments in App.js
+// 0. Import useState, useEffect and axios //Done
+// 1. I need to set state with Hook (useState)
+// 2. I need state for data, url, loading state,
+// and error state
+// last two it's additional state
+// add them after you check that Hook is working
+// .3 I need to use useEffect to fetch data from Api
+// create function within useEffect 
+// which will take param async()
+// then wrote body of functiong 
+// with setting url in await axios
+// and set data
+// .4 create const which will contain JSX markup
+// for render our data
+// also in that const we get access to our fetched data
+// in order to display them
+// 5. call const with JSX in return
+// pass to this const arguments data isLoading and isError
+// 6. Realise that all those thing doesn't work
+// 7. Cry in loud
+// 8. Fix all that mess... somehow
+// 9. Document your code while writing 
+// maybe good idea came to your head while you reviewing 
+// you code 
 
 // I will all the code down below in comments
 // First I copy pice of code
 // Then I explain it
 // I do that in order keep code it self clean and readable
 
-//CODE: const [temp, setTemp] = useState([{ starship: {} }]);
+//CODE: 
+//const [temp, setTemp] = useState([{ starship: {} }]);
 // First we create state Hook which wiil be contain
 // data for us
 // temp is our state
@@ -56,9 +80,11 @@ export default DailyTemp;
 //CODE: Const DeathStar(change name later)
 // recieve data and then display it
 // is's our JSX markup
-// I pass parametr starship that replace ships state within
+// I pass parametr starship that 
+// replace ships state within
 // function. It's won't work until
-// ships will be mapped on App component with method .map
+// ships will be mapped on return of this function component
+// with method .map
 // and one of parametr of map will be starship, second index
 // with that we can iterate through our array and display items
 // with certain order

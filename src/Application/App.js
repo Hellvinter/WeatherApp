@@ -1,9 +1,13 @@
-import React , {useState, useEffect} from "react";
-import axios from "axios"
+import React  from "react";
+
+import DailyTemp from "./DailyTemp"
 
 function App() {
   return (
-    <div>Hello world</div>
+    <div className="App">
+      <DailyTemp />
+    </div>
+    
   )
 }
 
@@ -11,7 +15,7 @@ export default App;
 
 // This component its  a core of App
 // It's contain all our components
-// And then iur index.js take all of this
+// And then our index.js take all of this
 // stuff and render in div with id="root"
 // After that magic hapens and all our code
 // displayed on screen
@@ -22,3 +26,9 @@ export default App;
 // object and iterate through different object childs
 // then call DeathStar const and pass arguments to it key=index
 // index=index, starship=starship, then magic happen
+
+//Stuff you written above...
+// Dude how dum I can be sometime
+// You need to create const with jsx markup inside DailyTemp
+// and pass it within DailyTemp component in return
+// In App you just call it
