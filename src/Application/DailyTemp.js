@@ -3,11 +3,11 @@ import axios from "axios"
 
 function DailyTemp() {
   //initialise state
-  const person = {character : []}
-  const initUrl = "http https://swapi.co/api/people/1"
-  const[data, setData] = useState(person)
-  console.log(data)
-  console.log(data.character.name)
+  const weather = {current: []}
+  const initUrl = "http://api.apixu.com/v1/current.json?key=b2c39fc02e2844cfa9562014192606&q=vancouver"
+  const[data, setData] = useState(weather)
+  console.log(data.current)
+ 
 
   useEffect(() => {
     const Fetch = async() => {
@@ -20,9 +20,7 @@ function DailyTemp() {
   return (
     <div>
       <h1>Hi</h1>
-      {data.character.map(item => (
-        <h2>{item.name}</h2>
-      ))}
+      <p>{data.current.temp_c}</p>
     </div>
   )
 };
