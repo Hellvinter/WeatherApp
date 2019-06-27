@@ -1,11 +1,13 @@
 import React  from "react";
 
 import DailyTemp from "./DailyTemp"
+import Child from "./TestChild"
 
 function App() {
   return (
     <div className="App">
       <DailyTemp />
+      <Child />
     </div>
     
   )
