@@ -6,11 +6,11 @@ function DailyTemp() {
   const weather = {current: [], location: []}
   const initUrl = "http://api.apixu.com/v1/current.json?key=b2c39fc02e2844cfa9562014192606&q=vancouver"
   const[data, setData] = useState(weather)
-  console.log(data)
-  console.log(data.current)
-  console.log(data.current.temp_c)
-  console.log(data.location)
-  console.log(data.location.name)
+  //console.log(data)
+  //console.log(data.current)
+  //console.log(data.current.temp_c)
+  //console.log(data.location)
+  //console.log(data.location.name)
 
   useEffect(() => {
     const Fetch = async() => {
@@ -25,8 +25,10 @@ function DailyTemp() {
   return (
     <div>
       <h1>Hi</h1>
-      <p>{data.current.temp_c}</p>
+      <h2>I am</h2>
       <p>{data.location.name}</p>
+      <h2>My current temp is</h2> 
+      <p>{data.current.temp_c}</p>
     </div>
   )
 };
