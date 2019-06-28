@@ -3,10 +3,14 @@ import axios from "axios"
 
 function DailyTemp() {
   //initialise state
-  const weather = {current: []}
+  const weather = {current: [], location: []}
   const initUrl = "http://api.apixu.com/v1/current.json?key=b2c39fc02e2844cfa9562014192606&q=vancouver"
   const[data, setData] = useState(weather)
+  console.log(data)
   console.log(data.current)
+  console.log(data.current.temp_c)
+  console.log(data.location)
+  console.log(data.location.name)
 
   useEffect(() => {
     const Fetch = async() => {
@@ -22,6 +26,7 @@ function DailyTemp() {
     <div>
       <h1>Hi</h1>
       <p>{data.current.temp_c}</p>
+      <p>{data.location.name}</p>
     </div>
   )
 };

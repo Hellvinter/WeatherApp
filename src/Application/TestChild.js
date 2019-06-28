@@ -3,11 +3,11 @@ import useFetch from "./utils/useFetchHook"
 
 function Child() {
     const initUrl = "http://api.apixu.com/v1/current.json?key=b2c39fc02e2844cfa9562014192606&q=vancouver"
-    const loc =  []
-    const location = useFetch(initUrl, loc)
-    console.log(location)
-    console.log(location.location)
-    console.log(location.current)
+    const loc =  {location : []}
+    const [location] = useFetch(initUrl, loc)
+    //console.log(location)
+    //console.log(location.location)
+    //console.log(location.current)
 
     
 

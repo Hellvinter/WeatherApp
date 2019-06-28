@@ -12,7 +12,7 @@ function useFetch(initUrl, initData) {
         Fetch()
     },[])
 
-    return {...data}
+    return [data]
 }
 
 export default useFetch
