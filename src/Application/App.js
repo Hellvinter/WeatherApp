@@ -1,13 +1,11 @@
 import React  from "react";
 
-import DailyTemp from "./DailyTemp"
-import Child from "./TestChild"
+import CurrentWeather from "./Current"
 
 function App() {
   return (
     <div className="App">
-      <DailyTemp />
-      <Child />
+      <CurrentWeather />
     </div>
     
   )
