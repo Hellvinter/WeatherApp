@@ -4,6 +4,9 @@ body {
   color: #b7bbc1;
 }
 
+p {
+  font-weight: bold;
+}
 
 .App {
     font-family: sans-serif;
@@ -27,6 +30,7 @@ body {
 
 .weather_data {
   margin-top: 6rem;
+  margin-bottom: 2rem;
 }
 
 .weather_data-info {
@@ -34,4 +38,29 @@ body {
   padding: 1rem;
   background-color: rgba(69,74,84, .6);
   border-radius: 8%;
+}
+
+.weather_search { 
+  background-color: rgba(69, 74, 84, .6);
+  padding: .4rem;
+  border-radius: 8%;
+}
+
+.weather_search-text {
+  border: none;
+  border-radius: 3%;
+  padding: .2rem;
+  margin-right: .1rem;
+  background-color: rgba(183,187,193, .6);
+  color: rgb(60,82,103);
+}
+
+.weather_search-btn {
+  border: none;
+  background-color: rgba(183,187,193, .6);;
+  color: rgb(60,82,103);
+  padding: .2rem;
+  border-radius: 0 8% 8% 0;
+  font-weight: bold;
+  text-transform: uppercase;
 }
