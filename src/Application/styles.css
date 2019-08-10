@@ -1,0 +1,66 @@
+body {
+  box-sizing: border-box;
+  margin: 0;
+  color: #b7bbc1;
+}
+
+p {
+  font-weight: bold;
+}
+
+.App {
+    font-family: sans-serif;
+    text-align: center;
+    height: 100vh;
+    background: #b7bbc1 url("https://image.freepik.com/free-vector/evening-landscape_7993-2580.jpg") no-repeat center;
+    background-size: cover;
+}
+
+  
+.weather_body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.weather_heading {
+  margin-top: 2rem;
+}
+
+.weather_data {
+  margin-top: 6rem;
+  margin-bottom: 2rem;
+}
+
+.weather_data-info {
+  margin: .4rem;
+  padding: 1rem;
+  background-color: rgba(69,74,84, .6);
+  border-radius: 8%;
+}
+
+.weather_search { 
+  background-color: rgba(69, 74, 84, .6);
+  padding: .4rem;
+  border-radius: 8%;
+}
+
+.weather_search-text {
+  border: none;
+  border-radius: 3%;
+  padding: .2rem;
+  margin-right: .1rem;
+  background-color: rgba(183,187,193, .6);
+  color: rgb(60,82,103);
+}
+
+.weather_search-btn {
+  border: none;
+  background-color: rgba(183,187,193, .6);;
+  color: rgb(60,82,103);
+  padding: .2rem;
+  border-radius: 0 8% 8% 0;
+  font-weight: bold;
+  text-transform: uppercase;
+}
