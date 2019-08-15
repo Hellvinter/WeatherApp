@@ -7,17 +7,13 @@ function CurrentWeather() {
     // const loc create object which will contain data
     // then I pass it like param in useFetch
     // const place receive and store data from useFetch hook
-    const initialUrl = `http://api.apixu.com/v1/current.json?key=b2c39fc02e2844cfa9562014192606&q=${query}`;
+    const initialUrl = `https://api.apixu.com/v1/current.json?key=b2c39fc02e2844cfa9562014192606&q=${query}`;
     const loc =  {current: [], location : []};
     // by some reasonse I must pass {data} in that particular
     // scenario for now I dont know why it's work that way
     // need to read about that    
-    const [{data}, changeQuery] = useFetch(initialUrl, loc);
-    //console.log(data)
-    //console.log(data.current)
-    //console.log(data.current.temp_c)
-    //console.log(data.location)
-    //console.log(data.location.name)
+    const [{data, isError}, changeQuery] = useFetch(initialUrl, loc);
+    
     
     // stuff below display data and whatever we want
     // JavaScript must be written in curly brackets
@@ -28,6 +24,7 @@ function CurrentWeather() {
             <h1 className="weather_heading">
                 Find out your local weather
             </h1>
+            {isError && <h3 className='weather_data'>Ooops something goes wrong...</h3>}
             <div className="weather_data">
                 <h2>Location</h2>
                 <p 
